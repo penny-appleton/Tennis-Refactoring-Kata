@@ -18,3 +18,5 @@ Static values
     Fifteen
     Thirty
     Forty
+
+Step 3: refactor player into it's own class, Game doesn't need to hold onto player details it should just ask for them from the player
