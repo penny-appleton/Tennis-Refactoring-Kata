@@ -3,8 +3,8 @@ public class TennisGame1 implements TennisGame {
 
     private final Player player1;
     private final Player player2;
-    private int m_score1 = 0;
-    private int m_score2 = 0;
+   /* private int m_score1 = 0;
+    private int m_score2 = 0;*/
     private Score state;
 
     public TennisGame1(String player1Name, String player2Name) {
@@ -15,20 +15,22 @@ public class TennisGame1 implements TennisGame {
 
     public void wonPoint(String playerName) {
         if (playerName.equals(player1.getName()))
-            m_score1 += 1;
+            player1.addPoint();
+           /* m_score1 += 1;*/
         else
-            m_score2 += 1;
+            player2.addPoint();
+            /*m_score2 += 1*/;
     }
 
     public String getScore() {
-        if (m_score1 == m_score2) {
-            return state.setScore(m_score1, m_score2);
-        } else if (m_score1 >= 4 || m_score2 >= 4) {
+        if (player1.getScore() == player2.getScore()) {
+            return state.setScore(player1.getScore(), player2.getScore());
+        } else if (player1.getScore() >= 4 || player2.getScore() >= 4) {
             state = new Advantage();
-            return state.setScore(m_score1, m_score2);
+            return state.setScore(player1.getScore(), player2.getScore());
         } else {
             state = new Normal();
-            return state.setScore(m_score1, m_score2);
+            return state.setScore(player1.getScore(), player2.getScore());
         }
 
     }
