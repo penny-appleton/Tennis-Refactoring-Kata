@@ -24,54 +24,16 @@ public class TennisGame1 implements TennisGame {
 
     //Code smells:  Switch Statements, temp field
     public String getScore() {
-
-        String tempscore = "";
         if (m_score1 == m_score2) {
             return score = state.setScore(m_score1, m_score2);
         } else if (m_score1 >= 4 || m_score2 >= 4) {
             state = new Advantage();
             return score = state.setScore(m_score1, m_score2);
-          /*  tempscore = playerAdvantage();*/
         } else {
-            tempscore = incrementPlayerScore(tempscore);
+            state = new Normal();
+            return score = state.setScore(m_score1, m_score2);
         }
-        return tempscore;
-    }
 
-    private String incrementPlayerScore(String score) {
-        int tempScore;
-        for (int i = 1; i < 3; i++) {
-            if (i == 1) tempScore = m_score1;
-            else {
-                score += "-";
-                tempScore = m_score2;
-            }
-            switch (tempScore) {
-                case 0:
-                    score += "Love";
-                    break;
-                case 1:
-                    score += "Fifteen";
-                    break;
-                case 2:
-                    score += "Thirty";
-                    break;
-                case 3:
-                    score += "Forty";
-                    break;
-            }
-        }
-        return score;
-    }
-
-    private String playerAdvantage() {
-        String score;
-        int minusResult = m_score1 - m_score2;
-        if (minusResult == 1) score = "Advantage player1";
-        else if (minusResult == -1) score = "Advantage player2";
-        else if (minusResult >= 2) score = "Win for player1";
-        else score = "Win for player2";
-        return score;
     }
 
 }
