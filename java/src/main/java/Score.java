@@ -1,5 +1,10 @@
 public interface Score {
-   static final String LOVE = "Love";
+    String LOVE = "Love";
+    String FIFTEEN = "Fifteen";
+    String THIRTY = "Thirty";
+    String FORTY = "Forty";
 
-    String setScore();
+    String setScore(int scoreIncrement);
+
+    String getState();
 }
