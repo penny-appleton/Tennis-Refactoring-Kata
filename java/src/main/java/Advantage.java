@@ -7,8 +7,4 @@ public class Advantage implements Score {
         else return "Win for player2";
     }
 
-    @Override
-    public String getState() {
-        return "Advantage";
-    }
 }

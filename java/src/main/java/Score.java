@@ -6,5 +6,5 @@ public interface Score {
 
     String setScore(int player1Score, int player2Score);
 
-    String getState();
+
 }

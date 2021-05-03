@@ -13,8 +13,4 @@ public class All implements Score{
         return "Deuce";
     }
 
-    @Override
-    public String getState() {
-        return "All";
-    }
 }
