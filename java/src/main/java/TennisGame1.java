@@ -12,7 +12,7 @@ public class TennisGame1 implements TennisGame {
         this.player1Name = player1Name;
         this.player2Name = player2Name;
         state = new All();
-        score = state.setScore(m_score1);
+        score = state.setScore(m_score1, m_score2);
     }
 
     public void wonPoint(String playerName) {
@@ -27,9 +27,11 @@ public class TennisGame1 implements TennisGame {
 
         String tempscore = "";
         if (m_score1 == m_score2) {
-            return score = state.setScore(m_score1);
+            return score = state.setScore(m_score1, m_score2);
         } else if (m_score1 >= 4 || m_score2 >= 4) {
-            tempscore = playerAdvantage();
+            state = new Advantage();
+            return score = state.setScore(m_score1, m_score2);
+          /*  tempscore = playerAdvantage();*/
         } else {
             tempscore = incrementPlayerScore(tempscore);
         }

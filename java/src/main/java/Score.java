@@ -4,7 +4,7 @@ public interface Score {
     String THIRTY = "Thirty";
     String FORTY = "Forty";
 
-    String setScore(int scoreIncrement);
+    String setScore(int player1Score, int player2Score);
 
     String getState();
 }
