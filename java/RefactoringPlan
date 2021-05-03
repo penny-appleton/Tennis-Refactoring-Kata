@@ -1,0 +1,20 @@
+Step 1 - get rid of long method
+    -create method for ScoresEqual
+    -create method for Advantage
+    -create method for increment Score
+
+Step2 - get rid of switch statements
+ - refactor to state pattern
+
+States
+    getPointValue() - returns static value
+    setScore()
+ ALL
+ ADVANTAGE
+ NORMAL
+
+Static values
+    LOVE
+    Fifteen
+    Thirty
+    Forty
