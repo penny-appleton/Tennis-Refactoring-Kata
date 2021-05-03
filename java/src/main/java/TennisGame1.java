@@ -18,7 +18,7 @@ public class TennisGame1 implements TennisGame {
             player2.addPoint();
     }
 
-    public String getScore() {
+    public String getGameScore() {
         if (player1.getScore() == player2.getScore()) {
             return state.setScore(player1.getScore(), player2.getScore());
         } else if (player1.getScore() >= 4 || player2.getScore() >= 4) {
