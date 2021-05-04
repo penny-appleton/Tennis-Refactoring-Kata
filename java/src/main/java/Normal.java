@@ -1,24 +1,29 @@
-public class Normal implements Score {
+public class Normal implements ScoreState {
     private String score;
 
-    @Override
-    public String setScore(int player1Score, int player2Score) {
 
-        return getPlayerScore(player1Score) + "-" + getPlayerScore(player2Score);
+    public void setScore(int player1Score, int player2Score) {
+
+        score = getPlayerScore(player1Score) + "-" + getPlayerScore(player2Score);
+    }
+
+    @Override
+    public String getScore() {
+        return score;
     }
 
     private String getPlayerScore(int playerScore){
         if(playerScore == 0){
-            return Score.LOVE;
+            return ScoreState.LOVE;
         }
         if (playerScore ==1 ){
-            return Score.FIFTEEN;
+            return ScoreState.FIFTEEN;
         }
         if (playerScore == 2){
-            return Score.THIRTY;
+            return ScoreState.THIRTY;
         }
         if (playerScore == 3){
-            return Score.FORTY;
+            return ScoreState.FORTY;
         }
         return "score not found";
     }

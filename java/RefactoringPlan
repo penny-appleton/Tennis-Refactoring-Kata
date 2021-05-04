@@ -1,7 +1,7 @@
 Step 1 - get rid of long method
     -create method for ScoresEqual
     -create method for Advantage
-    -create method for increment Score
+    -create method for increment ScoreState
 
 Step2 - get rid of switch statements
  - refactor to state pattern
