@@ -22,18 +22,22 @@ public class TennisGame1 implements TennisGame {
 
     public String getGameScore() {
         if (player1.getScore() == player2.getScore()) {
-            state.setScore(player1.getScore(), player2.getScore());
-            return state.getScore();
+            return getScore();
         } else if (player1.getScore() >= 4 || player2.getScore() >= 4) {
             state = new Advantage();
-            state.setScore(player1.getScore(), player2.getScore());
-            return state.getScore();
+            return getScore();
         } else {
             state = new Normal();
-            state.setScore(player1.getScore(), player2.getScore());
-            return state.getScore();
+            return getScore();
         }
 
+    }
+
+    private String getScore() {
+        score.setScore(state, player1.getScore(), player2.getScore());
+        /*state.setScore(player1.getScore(), player2.getScore());*/
+
+        return score.getScore();
     }
 
 }

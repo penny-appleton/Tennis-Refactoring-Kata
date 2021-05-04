@@ -20,3 +20,10 @@ Static values
     Forty
 
 Step 3: refactor player into it's own class, Game doesn't need to hold onto player details it should just ask for them from the player
+
+
+Updates for state pattern
+create context class (Score) that interacts with State interface (ScoreState)
+  -get context from Score class
+  -won point should have Score class update state
+  -getGameScore should call Score to get current score
