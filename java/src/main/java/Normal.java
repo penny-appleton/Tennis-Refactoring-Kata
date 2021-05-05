@@ -7,7 +7,6 @@ public class Normal implements ScoreState {
         score = getPlayerScore(player1Score) + "-" + getPlayerScore(player2Score);
     }
 
-    @Override
     public String getScore() {
         return score;
     }

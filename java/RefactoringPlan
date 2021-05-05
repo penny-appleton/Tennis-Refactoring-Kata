@@ -23,7 +23,7 @@ Step 3: refactor player into it's own class, Game doesn't need to hold onto play
 
 
 Updates for state pattern
-create context class (Score) that interacts with State interface (ScoreState)
-  -get context from Score class
-  -won point should have Score class set score and update state;
-  -getGameScore should call Score to get current score
+create context class (ScoreContext) that interacts with State interface (ScoreState)
+  -get context from ScoreContext class
+  -won point should have ScoreContext class set score and update state;
+  -getGameScore should call ScoreContext to get current score

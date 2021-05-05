@@ -3,41 +3,29 @@ public class TennisGame1 implements TennisGame {
 
     private final Player player1;
     private final Player player2;
-    private final Score score = new Score();
-    private ScoreState state;
+    private final ScoreContext scoreContext = new ScoreContext();
 
     public TennisGame1(String player1Name, String player2Name) {
         player1 = new Player(player1Name);
         player2 = new Player(player2Name);
-        state = score.getState();
+        scoreContext.setState(new AllState(scoreContext));
     }
 
     public void wonPoint(String playerName) {
+        String playerWhoWon;
         if (playerName.equals(player1.getName())) {
-            player1.addPoint();
+            playerWhoWon = "Player1";
+         //   player1.addPoint();
         } else {
-            player2.addPoint();
+         //   player2.addPoint();
+            playerWhoWon = "Player2";
         }
+        scoreContext.setScore(playerWhoWon);
     }
 
     public String getGameScore() {
-        if (player1.getScore() == player2.getScore()) {
-            return getScore();
-        } else if (player1.getScore() >= 4 || player2.getScore() >= 4) {
-            state = new Advantage();
-            return getScore();
-        } else {
-            state = new Normal();
-            return getScore();
-        }
+        return scoreContext.getScore();
 
-    }
-
-    private String getScore() {
-        score.setScore(state, player1.getScore(), player2.getScore());
-        /*state.setScore(player1.getScore(), player2.getScore());*/
-
-        return score.getScore();
     }
 
 }
