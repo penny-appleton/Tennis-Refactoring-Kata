@@ -9,7 +9,7 @@ public class ScoreContext {
     }
 
     public void setScore(String playerWhoWonPoint) {
-        if(playerWhoWonPoint.equals("Player1")){
+        if(playerWhoWonPoint.equals("player1")){
             player1Score += 1;
         } else player2Score +=1;
 

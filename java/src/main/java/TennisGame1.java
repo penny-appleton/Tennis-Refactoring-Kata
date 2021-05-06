@@ -12,15 +12,8 @@ public class TennisGame1 implements TennisGame {
     }
 
     public void wonPoint(String playerName) {
-        String playerWhoWon;
-        if (playerName.equals(player1.getName())) {
-            playerWhoWon = "Player1";
-         //   player1.addPoint();
-        } else {
-         //   player2.addPoint();
-            playerWhoWon = "Player2";
-        }
-        scoreContext.setScore(playerWhoWon);
+
+        scoreContext.setScore(playerName);
     }
 
     public String getGameScore() {
