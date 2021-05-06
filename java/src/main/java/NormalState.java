@@ -21,16 +21,16 @@ public class NormalState extends NewScoreState {
 
     private String getPlayerScore(int playerScore){
         if(playerScore == 0){
-            return ScoreState.LOVE;
+            return NewScoreState.LOVE;
         }
         if (playerScore ==1 ){
-            return ScoreState.FIFTEEN;
+            return NewScoreState.FIFTEEN;
         }
         if (playerScore == 2){
-            return ScoreState.THIRTY;
+            return NewScoreState.THIRTY;
         }
         if (playerScore == 3){
-            return ScoreState.FORTY;
+            return NewScoreState.FORTY;
         }
         return "score not found";
     }

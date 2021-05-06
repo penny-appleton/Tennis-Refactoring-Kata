@@ -15,11 +15,11 @@ public class AllState extends NewScoreState {
     @Override
     public String getScore(int player1Score, int player2Score) {
         if (player1Score == 0) {
-            return ScoreState.LOVE + "-All";
+            return NewScoreState.LOVE + "-All";
         } else if (player1Score == 1) {
-            return ScoreState.FIFTEEN + "-All";
+            return NewScoreState.FIFTEEN + "-All";
         } else if (player1Score == 2) {
-            return ScoreState.THIRTY + "-All";
+            return NewScoreState.THIRTY + "-All";
         } else
             return "Deuce";
     }

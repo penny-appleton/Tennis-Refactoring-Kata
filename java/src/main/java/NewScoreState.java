@@ -1,5 +1,9 @@
 public abstract class NewScoreState {
 
+    protected static final String LOVE = "Love";
+    protected static final String FIFTEEN = "Fifteen";
+    protected static final String THIRTY = "Thirty";
+    protected static final String FORTY = "Forty";
     protected final ScoreContext context;
 
     public NewScoreState(ScoreContext context) {
