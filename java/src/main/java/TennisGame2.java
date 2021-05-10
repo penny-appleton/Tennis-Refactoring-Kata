@@ -9,20 +9,23 @@ public class TennisGame2 implements TennisGame {
     private String player2Name;
 
     private ScoreContext context = new ScoreContext();
-    private ScoreState state;
+
 
 
     public TennisGame2(String player1Name, String player2Name) {
         this.player1Name = player1Name;
         this.player2Name = player2Name;
-        state = new AllState(context);
+        context.setState(new AllState(context));
     }
 
     public String getScore() {
+
         String score = "";
+
         if (P1point == P2point && P1point < 4) {
             score = getScoreString(P1point);
             score += "-All";
+
         }
         if (P1point == P2point && P1point >= 3)
             score = "Deuce";
@@ -80,19 +83,14 @@ public class TennisGame2 implements TennisGame {
         return "";
     }
 
-
-    public void P1Score() {
-        P1point++;
-    }
-
-    public void P2Score() {
-        P2point++;
-    }
-
     public void wonPoint(String player) {
-        if (player == "player1")
-            P1Score();
-        else
-            P2Score();
+        if (player.equals("player1")) {
+            P1point++;
+            context.setScore(player);
+        } else {
+            P2point++;
+            context.setScore(player);
+        }
+
     }
 }

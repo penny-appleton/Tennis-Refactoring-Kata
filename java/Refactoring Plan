@@ -1,4 +1,6 @@
 1. Remove Dead Code
 2. Create Methods for each state type
+    -set score sets the state
+    -get store calculates the score
 3. Shift to State Pattern
 
